@@ -4,6 +4,6 @@
 
 void BHop::Run()
 {
-	if (GetAsyncKeyState(VK_SPACE) && flags & FL_ONGROUND)
+	if (this->isActive && GetAsyncKeyState(VK_SPACE) && flags & FL_ONGROUND)
 		*(uintptr_t*)(clientModule + dwForceJump) = 6;
 }
