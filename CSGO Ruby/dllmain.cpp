@@ -16,8 +16,7 @@ WORD WINAPI HackThread(HMODULE hModule) {
     while (!GetAsyncKeyState(PANIC_KEY)) {
         Values::InitInGame();
         HackToggles();
-
-        BunnyHop.Run();
+        HackRuns();
         
         Sleep(1);
     }
