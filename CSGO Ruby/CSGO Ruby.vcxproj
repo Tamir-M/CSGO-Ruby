@@ -147,7 +147,9 @@
     <ClInclude Include="Glow.h" />
     <ClInclude Include="HackFeatures.h" />
     <ClInclude Include="Radar.h" />
+    <ClInclude Include="RCS.h" />
     <ClInclude Include="Values.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AntiFlash.cpp" />
@@ -157,6 +159,7 @@
     <ClCompile Include="Glow.cpp" />
     <ClCompile Include="HackFeatures.cpp" />
     <ClCompile Include="Radar.cpp" />
+    <ClCompile Include="RCS.cpp" />
     <ClCompile Include="Values.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

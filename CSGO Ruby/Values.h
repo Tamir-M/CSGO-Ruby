@@ -9,6 +9,7 @@ extern uintptr_t clientModule;
 extern uintptr_t localPlayer;
 extern uintptr_t flags;
 extern uintptr_t GlowObject;
+extern uintptr_t engineModule;
 
 namespace Values {
 	extern void InitPreGame();
