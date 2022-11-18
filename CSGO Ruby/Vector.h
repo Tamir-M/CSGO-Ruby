@@ -1,11 +1,25 @@
 #pragma once
 
 
-struct Vec3 {
+class Vec3 {
+public:
 	float x, y, z;
-
+	Vec3() {
+		this->x = this->y = this->z = 0;
+	}
+	Vec3(float x, float y, float z) {
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
 	Vec3 operator+(Vec3 d) {
 		return { x + d.x, y + d.y, z + d.z };
+	}
+	Vec3& add(Vec3 arg) {
+		this->x += arg.x;
+		this->y += arg.y;
+		this->z += arg.z;
+		return *this;
 	}
 	Vec3 operator-(Vec3 d) {
 		return { x - d.x, y - d.y, z - d.z };

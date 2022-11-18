@@ -40,6 +40,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{1ae74d2b-031e-47df-82a4-d85cd5a41f1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Aimbot">
+      <UniqueIdentifier>{9fe15ba0-eadf-4776-90c8-d75d9ae6c2a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -75,6 +78,9 @@
     <ClInclude Include="Vector.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Aimbot.h">
+      <Filter>Aimbot</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -103,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="RCS.cpp">
       <Filter>RCS</Filter>
+    </ClCompile>
+    <ClCompile Include="Aimbot.cpp">
+      <Filter>Aimbot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

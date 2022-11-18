@@ -20,7 +20,6 @@ WORD WINAPI HackThread(HMODULE hModule) {
         
         Sleep(1);
     }
-
     FreeLibraryAndExitThread(hModule, 0);
     return 0;
 }

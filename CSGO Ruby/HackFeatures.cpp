@@ -5,6 +5,7 @@ AntiFlash FlashHack;
 Radar RadarHack;
 Glow GlowHack;
 RCS RCSHack;
+Aimbot AimbotHack;
 
 void InitHackFeatures() {
 	BunnyHop = BHop();
@@ -12,6 +13,7 @@ void InitHackFeatures() {
 	RadarHack = Radar();
 	RCSHack = RCS();
 	RCSHack.Init();
+	AimbotHack = Aimbot();
 }
 
 void HackToggles() {
@@ -25,6 +27,8 @@ void HackToggles() {
 		GlowHack.Toggle();
 	if (GetAsyncKeyState(VK_NUMPAD5) & 1)
 		RCSHack.Toggle();
+	if (GetAsyncKeyState(VK_NUMPAD6) & 1)
+		AimbotHack.Toggle();
 }
 
 void HackRuns() {
@@ -33,4 +37,5 @@ void HackRuns() {
 	RadarHack.Run();
 	GlowHack.Run();
 	RCSHack.Run();
+	AimbotHack.Run();
 }
