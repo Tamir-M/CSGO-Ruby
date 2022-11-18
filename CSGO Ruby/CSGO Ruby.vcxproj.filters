@@ -22,6 +22,9 @@
     <Filter Include="Values">
       <UniqueIdentifier>{49d04812-6a76-4a40-a3d8-d011524fa969}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HackFeatures">
+      <UniqueIdentifier>{626381e5-e8a4-424c-9fab-d68314a8a2f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -39,6 +42,9 @@
     <ClInclude Include="Values.h">
       <Filter>Values</Filter>
     </ClInclude>
+    <ClInclude Include="HackFeatures.h">
+      <Filter>HackFeatures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -52,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="Values.cpp">
       <Filter>Values</Filter>
+    </ClCompile>
+    <ClCompile Include="HackFeatures.cpp">
+      <Filter>HackFeatures</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,12 +1,25 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-#include <Windows.h>
+#include "Values.h"
+#include "HackFeatures.h"
+
 #define PANIC_KEY VK_END
 
 
 WORD WINAPI HackThread(HMODULE hModule) {
+    Values::InitPreGame();
+
+    while (localPlayer == NULL)
+        Values::InitPreGame();
+    
+    InitHackFeatures();
 
     while (!GetAsyncKeyState(PANIC_KEY)) {
+        Values::InitInGame();
+        HackToggles();
 
+        BunnyHop.Run();
+        
+        Sleep(1);
     }
 
     FreeLibraryAndExitThread(hModule, 0);
