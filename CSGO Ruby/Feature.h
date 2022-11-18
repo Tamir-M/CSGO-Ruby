@@ -5,6 +5,7 @@
 
 extern class Feature
 {
+public:
 	bool isActive;
 
 	Feature();
