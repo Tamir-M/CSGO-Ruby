@@ -3,7 +3,7 @@
 
 #include "Values.h"
 
-extern class Feature
+class Feature
 {
 public:
 	bool isActive;
