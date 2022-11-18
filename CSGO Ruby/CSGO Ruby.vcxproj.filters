@@ -25,6 +25,9 @@
     <Filter Include="HackFeatures">
       <UniqueIdentifier>{626381e5-e8a4-424c-9fab-d68314a8a2f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AntiFlash">
+      <UniqueIdentifier>{eaf0731d-bdc8-4ded-8ded-94de0180df1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="HackFeatures.h">
       <Filter>HackFeatures</Filter>
     </ClInclude>
+    <ClInclude Include="AntiFlash.h">
+      <Filter>AntiFlash</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -61,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="HackFeatures.cpp">
       <Filter>HackFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiFlash.cpp">
+      <Filter>AntiFlash</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

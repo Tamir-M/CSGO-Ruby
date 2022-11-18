@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AntiFlash.h" />
     <ClInclude Include="BHop.h" />
     <ClInclude Include="csgo.hpp" />
     <ClInclude Include="Feature.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="Values.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AntiFlash.cpp" />
     <ClCompile Include="BHop.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Feature.cpp" />
