@@ -3,9 +3,11 @@
 uintptr_t flags;
 uintptr_t localPlayer;
 uintptr_t clientModule;
+uintptr_t GlowObject;
 
 void Values::InitInGame() {
 	flags = *(uintptr_t*)(localPlayer + m_fFlags);
+	GlowObject = *(uintptr_t*)(clientModule + dwGlowObjectManager);
 }
 
 void Values::InitPreGame() {
