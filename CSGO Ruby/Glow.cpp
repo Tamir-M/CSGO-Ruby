@@ -40,19 +40,19 @@ GlowStruct Glow::SetGlowColor(GlowStruct Glow, uintptr_t entity) {
 
 void Glow::SetTeamGlow(uintptr_t entity) {
 	int glowIdx = *(uintptr_t*)(entity + m_iGlowIndex);
-	GlowStruct Glow = *(GlowStruct*)(GlowObject + (glowIdx * 0x38));
+	GlowStruct Glow = *(GlowStruct*)(glowObject + (glowIdx * 0x38));
 
 	Glow.blue = 1.0f;
 	Glow.alpha = 1.0f;
 	Glow.renderWhenOccluded = true;
 	Glow.renderWhenUnoccluded = false;
 
-	*(GlowStruct*)(GlowObject + (glowIdx * 0x38)) = Glow;
+	*(GlowStruct*)(glowObject + (glowIdx * 0x38)) = Glow;
 }
 
 void Glow::SetEnemyGlow(uintptr_t entity) {
 	int glowIdx = *(uintptr_t*)(entity + m_iGlowIndex);
-	GlowStruct Glow = *(GlowStruct*)(GlowObject + (glowIdx * 0x38));
+	GlowStruct Glow = *(GlowStruct*)(glowObject + (glowIdx * 0x38));
 
-	*(GlowStruct*)(GlowObject + (glowIdx * 0x38)) = SetGlowColor(Glow, entity);
+	*(GlowStruct*)(glowObject + (glowIdx * 0x38)) = SetGlowColor(Glow, entity);
 }
