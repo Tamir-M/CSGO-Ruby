@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="csgo.hpp" />
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
