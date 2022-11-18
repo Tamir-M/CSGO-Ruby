@@ -145,6 +145,7 @@
     <ClInclude Include="Feature.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HackFeatures.h" />
+    <ClInclude Include="Radar.h" />
     <ClInclude Include="Values.h" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Feature.cpp" />
     <ClCompile Include="HackFeatures.cpp" />
+    <ClCompile Include="Radar.cpp" />
     <ClCompile Include="Values.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

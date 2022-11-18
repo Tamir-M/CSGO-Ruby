@@ -28,6 +28,9 @@
     <Filter Include="AntiFlash">
       <UniqueIdentifier>{eaf0731d-bdc8-4ded-8ded-94de0180df1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RadarHack">
+      <UniqueIdentifier>{83f54ddf-b3ae-4306-bc86-83f979b8ba27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="AntiFlash.h">
       <Filter>AntiFlash</Filter>
     </ClInclude>
+    <ClInclude Include="Radar.h">
+      <Filter>RadarHack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -70,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="AntiFlash.cpp">
       <Filter>AntiFlash</Filter>
+    </ClCompile>
+    <ClCompile Include="Radar.cpp">
+      <Filter>RadarHack</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
