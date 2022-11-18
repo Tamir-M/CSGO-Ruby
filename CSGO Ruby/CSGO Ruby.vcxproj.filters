@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="BHop">
+      <UniqueIdentifier>{69c2efd0-b8af-4109-aa9a-28357c8ecaa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Feature">
+      <UniqueIdentifier>{0a5067a0-18ac-4748-9e21-c050f45335db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Values">
+      <UniqueIdentifier>{49d04812-6a76-4a40-a3d8-d011524fa969}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -21,10 +30,28 @@
     <ClInclude Include="csgo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BHop.h">
+      <Filter>BHop</Filter>
+    </ClInclude>
+    <ClInclude Include="Feature.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="Values.h">
+      <Filter>Values</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BHop.cpp">
+      <Filter>BHop</Filter>
+    </ClCompile>
+    <ClCompile Include="Feature.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="Values.cpp">
+      <Filter>Values</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

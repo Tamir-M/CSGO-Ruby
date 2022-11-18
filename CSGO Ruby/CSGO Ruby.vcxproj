@@ -139,11 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BHop.h" />
     <ClInclude Include="csgo.hpp" />
+    <ClInclude Include="Feature.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Values.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BHop.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Feature.cpp" />
+    <ClCompile Include="Values.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
