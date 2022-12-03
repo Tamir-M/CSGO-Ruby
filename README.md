@@ -12,3 +12,5 @@ Inject the output DLL with any injector
 - AntiFlash
 - RCS
 - Radar Hack
+- Aimbot
+- ESP
