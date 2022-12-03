@@ -15,7 +15,7 @@ uintptr_t* Aimbot::GetClosestEnemy() {
 	int closestDistanceIndex = -1;
 	int localPlayerTeam = *(uintptr_t*)(localPlayer + m_iTeamNum);
 
-	for (unsigned short int i = 1; i < 10; ++i) {
+	for (unsigned short int i = 1; i < 64; ++i) {
 		uintptr_t entity = *(uintptr_t*)(clientModule + dwEntityList + (i * 0x10));
 
 		if (entity == NULL) break;
