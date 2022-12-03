@@ -14,6 +14,7 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
     if (!pDevice)
         pDevice = o_pDevice;
 
+    DrawFilledRect(25, 25, 100, 100, D3DCOLOR_ARGB(255,255,255,255));
 
     oEndScene(pDevice);
 }

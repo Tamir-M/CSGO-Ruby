@@ -4,6 +4,7 @@
 #include "Glow.h"
 #include "RCS.h"
 #include "Aimbot.h"
+#include "ESP.h"
 
 extern BHop BunnyHop;
 extern AntiFlash FlashHack;
