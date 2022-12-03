@@ -43,6 +43,15 @@
     <Filter Include="Aimbot">
       <UniqueIdentifier>{9fe15ba0-eadf-4776-90c8-d75d9ae6c2a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ESP">
+      <UniqueIdentifier>{71b322c8-c89c-4cd3-9b44-885671129031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hook">
+      <UniqueIdentifier>{38c1f573-bdcf-4736-be72-141d255da77e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{cea0fe6a-f42d-4ad8-9da1-2b210179a529}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -81,6 +90,15 @@
     <ClInclude Include="Aimbot.h">
       <Filter>Aimbot</Filter>
     </ClInclude>
+    <ClInclude Include="ESP.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="dx.h">
+      <Filter>DirectX</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -112,6 +130,15 @@
     </ClCompile>
     <ClCompile Include="Aimbot.cpp">
       <Filter>Aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="dx.cpp">
+      <Filter>DirectX</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

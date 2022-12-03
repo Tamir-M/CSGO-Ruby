@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)Lib\x86;</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -143,10 +147,13 @@
     <ClInclude Include="AntiFlash.h" />
     <ClInclude Include="BHop.h" />
     <ClInclude Include="csgo.hpp" />
+    <ClInclude Include="dx.h" />
+    <ClInclude Include="ESP.h" />
     <ClInclude Include="Feature.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Glow.h" />
     <ClInclude Include="HackFeatures.h" />
+    <ClInclude Include="Hook.h" />
     <ClInclude Include="Radar.h" />
     <ClInclude Include="RCS.h" />
     <ClInclude Include="Values.h" />
@@ -157,9 +164,12 @@
     <ClCompile Include="AntiFlash.cpp" />
     <ClCompile Include="BHop.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dx.cpp" />
+    <ClCompile Include="ESP.cpp" />
     <ClCompile Include="Feature.cpp" />
     <ClCompile Include="Glow.cpp" />
     <ClCompile Include="HackFeatures.cpp" />
+    <ClCompile Include="Hook.cpp" />
     <ClCompile Include="Radar.cpp" />
     <ClCompile Include="RCS.cpp" />
     <ClCompile Include="Values.cpp" />
