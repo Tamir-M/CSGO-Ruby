@@ -1,2 +1,48 @@
 #pragma once
 #include "Drawing.h"
+#include "Feature.h"
+
+#define STR_MERGE_IMPL(a, b) a##b
+#define STR_MERGE(a, b) STR_MERGE_IMPL(a, b)
+#define MAKE_PAD(size) STR_MERGE(_pad, __COUNTER__)[size]
+#define DEFINE_MEMBER_N(type, name, offset) struct { unsigned char MAKE_PAD(offset); type name; }
+
+class Ent {
+public:
+	union {
+		DEFINE_MEMBER_N(bool, isDormant, m_bDormant);
+		DEFINE_MEMBER_N(int, iHealth, m_iHealth);
+		DEFINE_MEMBER_N(Vec3, vecOrigin, m_vecOrigin);
+		DEFINE_MEMBER_N(int, iTeamNum, m_iTeamNum);
+		DEFINE_MEMBER_N(int, boneMatrix, m_dwBoneMatrix);
+		DEFINE_MEMBER_N(int, armorValue, m_ArmorValue);
+		DEFINE_MEMBER_N(Vec3, aimPunchAngle, m_aimPunchAngle);
+	};
+};
+
+class EntListObj {
+public:
+	Ent* ent;
+	char padding[12];
+};
+
+class EntList {
+public:
+	EntListObj ents[32];
+};
+
+class ESP: public Feature {
+public:
+	Ent* localEnt;
+	EntList* entList;
+	float viewMatrix[16];
+	
+
+public:
+	void Init();
+	void Run();
+	bool CheckValidEnt(Ent* ent);
+	bool WorldToScreen(Vec3 pos, Vec2& screen);
+	void Draw();
+	Vec3 GetBonePos(Ent* ent, int bone);
+};

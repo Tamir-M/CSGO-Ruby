@@ -55,6 +55,9 @@
     <Filter Include="Drawing">
       <UniqueIdentifier>{c4924282-1c60-44c9-ad78-edc712ebea9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Recoil Crosshair">
+      <UniqueIdentifier>{6eaaef51-293c-4790-8a88-9c374792be9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -105,6 +108,9 @@
     <ClInclude Include="Drawing.h">
       <Filter>Drawing</Filter>
     </ClInclude>
+    <ClInclude Include="RecoilCrosshair.h">
+      <Filter>Recoil Crosshair</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -148,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="Drawing.cpp">
       <Filter>Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="RecoilCrosshair.cpp">
+      <Filter>Recoil Crosshair</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -157,6 +157,7 @@
     <ClInclude Include="Hook.h" />
     <ClInclude Include="Radar.h" />
     <ClInclude Include="RCS.h" />
+    <ClInclude Include="RecoilCrosshair.h" />
     <ClInclude Include="Values.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
@@ -174,6 +175,7 @@
     <ClCompile Include="Hook.cpp" />
     <ClCompile Include="Radar.cpp" />
     <ClCompile Include="RCS.cpp" />
+    <ClCompile Include="RecoilCrosshair.cpp" />
     <ClCompile Include="Values.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

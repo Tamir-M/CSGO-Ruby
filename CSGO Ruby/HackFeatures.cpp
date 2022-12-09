@@ -6,6 +6,8 @@ Radar RadarHack;
 Glow GlowHack;
 RCS RCSHack;
 Aimbot AimbotHack;
+ESP* ESPHack;
+RecoilCrosshair* rCrosshairHack;
 
 void InitHackFeatures() {
 	BunnyHop = BHop();
@@ -14,6 +16,9 @@ void InitHackFeatures() {
 	RCSHack = RCS();
 	RCSHack.Init();
 	AimbotHack = Aimbot();
+	ESPHack = new ESP();
+	ESPHack->Init();
+	rCrosshairHack = new RecoilCrosshair();
 }
 
 void HackToggles() {
@@ -29,6 +34,10 @@ void HackToggles() {
 		RCSHack.Toggle();
 	if (GetAsyncKeyState(VK_NUMPAD6) & 1)
 		AimbotHack.Toggle();
+	if (GetAsyncKeyState(VK_NUMPAD7) & 1)
+		ESPHack->Toggle();
+	if (GetAsyncKeyState(VK_NUMPAD8) & 1)
+		rCrosshairHack->Toggle();
 }
 
 void HackRuns() {
@@ -38,4 +47,6 @@ void HackRuns() {
 	GlowHack.Run();
 	RCSHack.Run();
 	AimbotHack.Run();
+	ESPHack->Run();
+	rCrosshairHack->CalcRecoil();
 }

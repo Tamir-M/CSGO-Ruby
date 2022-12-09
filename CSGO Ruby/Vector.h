@@ -34,3 +34,11 @@ public:
 		if (x < -89) { x = -89; }
 	}
 };
+
+struct Vec2 {
+	float x, y;
+};
+
+struct Vec4 {
+	float x, y, z, w;
+};
