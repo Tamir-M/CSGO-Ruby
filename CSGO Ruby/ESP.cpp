@@ -1,18 +1,15 @@
 #include "ESP.h"
 
-void ESP::Init()
-{
+void ESP::Init() {
 	entList = (EntList*)(clientModule + dwEntityList);
 	localEnt = entList->ents[0].ent;
 }
 
-void ESP::Run()
-{
+void ESP::Run() {
 	memcpy(&viewMatrix, (PBYTE*)(clientModule + dwViewMatrix), sizeof(viewMatrix));
 }
 
-bool ESP::CheckValidEnt(Ent* ent)
-{
+bool ESP::CheckValidEnt(Ent* ent) {
 	if (ent == nullptr) return false;
 	if (ent == localEnt) return false;
 	if (ent->iHealth <= 0) return false;
@@ -40,8 +37,7 @@ bool ESP::WorldToScreen(Vec3 pos, Vec2& screen) {
 	return true;
 }
 
-void ESP::Draw()
-{
+void ESP::Draw() {
 	if (!this->isActive) return;
 	for (int i = 1; i < 32; ++i) {
 		Ent* curEnt = this->entList->ents[i].ent;
@@ -53,14 +49,45 @@ void ESP::Draw()
 		else
 			color = D3DCOLOR_ARGB(255, 255, 0, 0);
 
-		Vec2 entPos2D;
-		if (this->WorldToScreen(curEnt->vecOrigin, entPos2D))
+
+		Vec3 entHead3D = this->GetBonePos(curEnt, 8);
+		entHead3D.z += 8;
+		Vec2 entPos2D, entHead2D;
+		if (this->WorldToScreen(curEnt->vecOrigin, entPos2D)) {
 			DrawLine(entPos2D.x, entPos2D.y, static_cast<float>(windowWidth) / 2, static_cast<float>(windowHeight), 2, color);
+			
+			if (this->WorldToScreen(entHead3D, entHead2D)) {
+				DrawESPBox2D(entPos2D, entHead2D, 2, color);
+				
+				int height = ABS(entPos2D.y - entHead2D.y);
+				int dX = (entPos2D.x - entHead2D.x);
+
+				float healthPerc = curEnt->iHealth / 100.f;
+				float armorPerc = curEnt->armorValue / 100.f;
+
+				Vec2 botHealth, topHealth, botArmor, topArmor;
+				int healthHeight = height * healthPerc;
+				int armorHeight = height * armorPerc;
+
+				botHealth.y = botArmor.y = entPos2D.y;
+
+				botHealth.x = entPos2D.x - (height / 4) - 2;
+				botArmor.x = entPos2D.x + (height / 4) + 2;
+
+				topHealth.y = entHead2D.y + height - healthHeight;
+				topArmor.y = entHead2D.y + height - armorHeight;
+
+				topHealth.x = entPos2D.x - (height / 4) - 2 - (dX * healthPerc);
+				topArmor.x = entPos2D.x + (height / 4) + 2 - (dX * armorPerc);
+				
+				DrawLine(botHealth, topHealth, 5, D3DCOLOR_ARGB(255, 46, 139, 87));
+				DrawLine(botArmor, topArmor, 5, D3DCOLOR_ARGB(255, 30, 144, 255));
+			}
+		}
 	}
 }
 
-Vec3 ESP::GetBonePos(Ent* ent, int bone)
-{
+Vec3 ESP::GetBonePos(Ent* ent, int bone) {
 	uintptr_t bonePtr = ent->boneMatrix;
 	Vec3 bonePos;
 	bonePos.x = *(float*)(bonePtr + 0x30 * bone + 0x0C);
