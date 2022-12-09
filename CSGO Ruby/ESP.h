@@ -1,11 +1,13 @@
 #pragma once
-#include "Drawing.h"
+#include "dx.h"
 #include "Feature.h"
+#include "Vector.h"
 
 #define STR_MERGE_IMPL(a, b) a##b
 #define STR_MERGE(a, b) STR_MERGE_IMPL(a, b)
 #define MAKE_PAD(size) STR_MERGE(_pad, __COUNTER__)[size]
 #define DEFINE_MEMBER_N(type, name, offset) struct { unsigned char MAKE_PAD(offset); type name; }
+
 
 class Ent {
 public:
@@ -17,6 +19,10 @@ public:
 		DEFINE_MEMBER_N(int, boneMatrix, m_dwBoneMatrix);
 		DEFINE_MEMBER_N(int, armorValue, m_ArmorValue);
 		DEFINE_MEMBER_N(Vec3, aimPunchAngle, m_aimPunchAngle);
+		DEFINE_MEMBER_N(float, angEyeAnglesX, m_angEyeAnglesX);
+		DEFINE_MEMBER_N(float, angEyeAnglesY, m_angEyeAnglesY);
+		DEFINE_MEMBER_N(Vec3, vecVelocity, m_vecVelocity);
+		DEFINE_MEMBER_N(bool, bHasHelmet, m_bHasHelmet);
 	};
 };
 
@@ -36,13 +42,26 @@ public:
 	Ent* localEnt;
 	EntList* entList;
 	float viewMatrix[16];
+	ID3DXFont* Font;
 	
 
 public:
+	~ESP();
 	void Init();
 	void Run();
 	bool CheckValidEnt(Ent* ent);
 	bool WorldToScreen(Vec3 pos, Vec2& screen);
 	void Draw();
 	Vec3 GetBonePos(Ent* ent, int bone);
+	Vec3 TransformVec(Vec3 src, Vec3 ang, float distance);
+	struct settings {
+		bool showTeammates = true;
+		bool snapLines = true;
+		bool box2D = true;
+		bool status2D = true;
+		bool statusText = true;
+		bool box3D = true;
+		bool velEsp = true;
+		bool headlineESP = true;
+	}settings;
 };
