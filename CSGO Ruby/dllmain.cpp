@@ -46,6 +46,8 @@ WORD WINAPI HackThread(HMODULE hModule) {
 
     Patch((BYTE*)d3d9Device[42], EndSceneByte, 7);
 
+    Sleep(1000);
+
     FreeLibraryAndExitThread(hModule, 0);
     return 0;
 }
