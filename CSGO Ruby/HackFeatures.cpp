@@ -22,21 +22,21 @@ void InitHackFeatures() {
 }
 
 void HackToggles() {
-	if (GetAsyncKeyState(VK_NUMPAD1) & 1)
+	if (GetAsyncKeyState(VK_F1) & 1)
 		BunnyHop.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD2) & 1)
+	if (GetAsyncKeyState(VK_F2) & 1)
 		FlashHack.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD3) & 1)
+	if (GetAsyncKeyState(VK_F3) & 1)
 		RadarHack.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD4) & 1)
+	if (GetAsyncKeyState(VK_F4) & 1)
 		GlowHack.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD5) & 1)
+	if (GetAsyncKeyState(VK_F5) & 1)
 		RCSHack.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD6) & 1)
+	if (GetAsyncKeyState(VK_F6) & 1)
 		AimbotHack.Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD7) & 1)
+	if (GetAsyncKeyState(VK_F7) & 1)
 		ESPHack->Toggle();
-	if (GetAsyncKeyState(VK_NUMPAD8) & 1)
+	if (GetAsyncKeyState(VK_F8) & 1)
 		rCrosshairHack->Toggle();
 }
 
