@@ -42,6 +42,32 @@ bool ESP::WorldToScreen(Vec3 pos, Vec2& screen) {
 	return true;
 }
 
+void DrawStatus2D(Vec2 entPos2D, Vec2 entHead2D, Ent* curEnt) {
+	float height = ABS(entPos2D.y - entHead2D.y);
+	float dX = (entPos2D.x - entHead2D.x);
+
+	float healthPerc = curEnt->iHealth / 100.f;
+	float armorPerc = curEnt->armorValue / 100.f;
+
+	Vec2 botHealth, topHealth, botArmor, topArmor;
+	float healthHeight = height * healthPerc;
+	float armorHeight = height * armorPerc;
+
+	botHealth.y = botArmor.y = entPos2D.y;
+
+	botHealth.x = entPos2D.x - (height / 4) - 2;
+	botArmor.x = entPos2D.x + (height / 4) + 2;
+
+	topHealth.y = entHead2D.y + height - healthHeight;
+	topArmor.y = entHead2D.y + height - armorHeight;
+
+	topHealth.x = entPos2D.x - (height / 4) - 2 - (dX * healthPerc);
+	topArmor.x = entPos2D.x + (height / 4) + 2 - (dX * armorPerc);
+
+	DrawLine(botHealth, topHealth, 5, D3DCOLOR_ARGB(255, 46, 139, 87));
+	DrawLine(botArmor, topArmor, 5, D3DCOLOR_ARGB(255, 30, 144, 255));
+}
+
 void ESP::Draw() {
 	DrawText2D("CSGO Ruby", 0, 0, D3DCOLOR_ARGB(255, 255, 87, 51), DT_LEFT);
 	if (!this->isActive) return;
@@ -71,44 +97,17 @@ void ESP::Draw() {
 				if (this->settings.box3D)
 					DrawESPBox3D(entHead3D, curEnt->vecOrigin, curEnt->angEyeAnglesY, 25, 2, color);
 				
-				if (this->settings.status2D) {
-					float height = ABS(entPos2D.y - entHead2D.y);
-					float dX = (entPos2D.x - entHead2D.x);
-
-					float healthPerc = curEnt->iHealth / 100.f;
-					float armorPerc = curEnt->armorValue / 100.f;
-
-					Vec2 botHealth, topHealth, botArmor, topArmor;
-					float healthHeight = height * healthPerc;
-					float armorHeight = height * armorPerc;
-
-					botHealth.y = botArmor.y = entPos2D.y;
-
-					botHealth.x = entPos2D.x - (height / 4) - 2;
-					botArmor.x = entPos2D.x + (height / 4) + 2;
-
-					topHealth.y = entHead2D.y + height - healthHeight;
-					topArmor.y = entHead2D.y + height - armorHeight;
-
-					topHealth.x = entPos2D.x - (height / 4) - 2 - (dX * healthPerc);
-					topArmor.x = entPos2D.x + (height / 4) + 2 - (dX * armorPerc);
-
-					DrawLine(botHealth, topHealth, 5, D3DCOLOR_ARGB(255, 46, 139, 87));
-					DrawLine(botArmor, topArmor, 5, D3DCOLOR_ARGB(255, 30, 144, 255));
-				}
+				if (this->settings.status2D)
+					DrawStatus2D(entPos2D, entHead2D, curEnt);
 
 				if (this->settings.headlineESP) {
 					Vec3 head3D = this->GetBonePos(curEnt, 8);
-					Vec3 entAngles;
-					entAngles.x = curEnt->angEyeAnglesX;
-					entAngles.y = curEnt->angEyeAnglesY;
-					entAngles.z = 0;
-					Vec3 endPoint = this->TransformVec(head3D, entAngles, 60);
+					Vec3 entAngles = { curEnt->angEyeAnglesX, curEnt->angEyeAnglesY, 0 };
+					Vec3 endPoint3D = this->TransformVec(head3D, entAngles, 60);
 					Vec2 endPoint2D, head2D;
 					this->WorldToScreen(head3D, head2D);
-					if (this->WorldToScreen(head3D, endPoint2D)) {
+					if (this->WorldToScreen(endPoint3D, endPoint2D))
 						DrawLine(head2D, endPoint2D, 2, color);
-					}
 				}
 			}
 		}
@@ -128,6 +127,6 @@ Vec3 ESP::TransformVec(Vec3 src, Vec3 ang, float distance) {
 	Vec3 newPos;
 	newPos.x = src.x + (cosf(TORAD(ang.y)) * distance);
 	newPos.y = src.y + (sinf(TORAD(ang.y)) * distance);
-	newPos.z = src.z + (tanf(TORAD(ang.y)) * distance);
+	newPos.z = src.z + (tanf(TORAD(ang.x)) * distance);
 	return newPos;
 }
