@@ -1,5 +1,7 @@
 #include "ESP.h"
 #include "Drawing.h"
+#include <sstream>
+#include <string>
 
 ESP::~ESP() {
 	this->Font->Release();
@@ -94,11 +96,11 @@ void ESP::Draw() {
 				if(this->settings.box2D)
 					DrawESPBox2D(entPos2D, entHead2D, 2, color);
 
-				if (this->settings.box3D)
-					DrawESPBox3D(entHead3D, curEnt->vecOrigin, curEnt->angEyeAnglesY, 25, 2, color);
-				
 				if (this->settings.status2D)
 					DrawStatus2D(entPos2D, entHead2D, curEnt);
+				
+				if (this->settings.box3D)
+					DrawESPBox3D(entHead3D, curEnt->vecOrigin, curEnt->angEyeAnglesY, 25, 2, color);
 
 				if (this->settings.headlineESP) {
 					Vec3 head3D = this->GetBonePos(curEnt, 8);
@@ -108,6 +110,20 @@ void ESP::Draw() {
 					this->WorldToScreen(head3D, head2D);
 					if (this->WorldToScreen(endPoint3D, endPoint2D))
 						DrawLine(head2D, endPoint2D, 2, color);
+				}
+
+				if (this->settings.statusText) {
+					std::stringstream healthStream, armorStream;
+					healthStream << curEnt->iHealth;
+					armorStream << curEnt->armorValue;
+					std::string tempHealth = "health: " + healthStream.str();
+					std::string tempArmor = "armor: " + armorStream.str();
+					char* healthMsg = (char*)tempHealth.c_str();
+					char* armorMsg = (char*)tempArmor.c_str();
+
+					DrawText2D(healthMsg, entPos2D.x, entPos2D.y, D3DCOLOR_ARGB(255, 255, 255, 255));
+					DrawText2D(armorMsg, entPos2D.x, entPos2D.y + 12, D3DCOLOR_ARGB(255, 255, 255, 255));
+
 				}
 			}
 		}
