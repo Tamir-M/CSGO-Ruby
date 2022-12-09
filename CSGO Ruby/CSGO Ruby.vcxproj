@@ -147,6 +147,7 @@
     <ClInclude Include="AntiFlash.h" />
     <ClInclude Include="BHop.h" />
     <ClInclude Include="csgo.hpp" />
+    <ClInclude Include="Drawing.h" />
     <ClInclude Include="dx.h" />
     <ClInclude Include="ESP.h" />
     <ClInclude Include="Feature.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="AntiFlash.cpp" />
     <ClCompile Include="BHop.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Drawing.cpp" />
     <ClCompile Include="dx.cpp" />
     <ClCompile Include="ESP.cpp" />
     <ClCompile Include="Feature.cpp" />

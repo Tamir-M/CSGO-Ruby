@@ -52,6 +52,9 @@
     <Filter Include="DirectX">
       <UniqueIdentifier>{cea0fe6a-f42d-4ad8-9da1-2b210179a529}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Drawing">
+      <UniqueIdentifier>{c4924282-1c60-44c9-ad78-edc712ebea9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +102,9 @@
     <ClInclude Include="dx.h">
       <Filter>DirectX</Filter>
     </ClInclude>
+    <ClInclude Include="Drawing.h">
+      <Filter>Drawing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -139,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="dx.cpp">
       <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawing.cpp">
+      <Filter>Drawing</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
