@@ -147,6 +147,7 @@
     <ClInclude Include="Feature\Aimbot\Aimbot.h" />
     <ClInclude Include="Feature\AntiFlash\AntiFlash.h" />
     <ClInclude Include="Feature\BHop\BHop.h" />
+    <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="Utils\Values\csgo.hpp" />
     <ClInclude Include="Utils\HooksD9\Drawing.h" />
     <ClInclude Include="Utils\HooksD9\dx.h" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Feature\AntiFlash\AntiFlash.cpp" />
     <ClCompile Include="Feature\BHop\BHop.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="Utils\HooksD9\Drawing.cpp" />
     <ClCompile Include="Utils\HooksD9\dx.cpp" />
     <ClCompile Include="Feature\ESP\ESP.cpp" />

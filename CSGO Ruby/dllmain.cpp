@@ -1,6 +1,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "Feature/HackFeatures.h"
 #include "Utils/HooksD9/Hook.h"
+#include "./GUI/GUI.h"
 
 #define PANIC_KEY VK_END
 
@@ -15,6 +16,12 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
 
     ESPHack->Draw();
     rCrosshairHack->Draw();
+
+    if (!GUI::setup)
+        GUI::SetupMenu(pDevice);
+
+    if (GUI::open)
+        GUI::Render();
      
     oEndScene(pDevice);
 }
@@ -44,6 +51,10 @@ WORD WINAPI HackThread(HMODULE hModule) {
     }
 
     Patch((BYTE*)d3d9Device[42], EndSceneByte, 7);
+    
+    Sleep(1000);
+
+    GUI::Destroy();
 
     Sleep(1000);
 

@@ -58,13 +58,12 @@ public:
 	Vec3 GetBonePos(Ent* ent, int bone);
 	Vec3 TransformVec(Vec3 src, Vec3 ang, float distance);
 	struct settings {
-		bool showTeammates = true;
-		bool snapLines = true;
-		bool box2D = true;
-		bool status2D = true;
-		bool statusText = true;
-		bool box3D = true;
-		bool velEsp = true;
-		bool headlineESP = true;
+		bool showTeammates = false;
+		bool snapLines = false;
+		bool box2D = false;
+		bool status2D = false;
+		bool statusText = false;
+		bool box3D = false;
+		bool headlineESP = false;
 	}settings;
 };
