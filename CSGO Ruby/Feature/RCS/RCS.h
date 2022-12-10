@@ -1,5 +1,6 @@
-#include "Feature.h"
-#include "Vector.h"
+#pragma once
+#include "../Baseline/Feature.h"
+#include "../../Utils/Vector.h"
 
 class RCS : public Feature
 {

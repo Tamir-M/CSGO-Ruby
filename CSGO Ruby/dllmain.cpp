@@ -1,7 +1,6 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-#include "Values.h"
-#include "HackFeatures.h"
-#include "Hook.h"
+#include "Feature/HackFeatures.h"
+#include "Utils/HooksD9/Hook.h"
 
 #define PANIC_KEY VK_END
 

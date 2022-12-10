@@ -1,6 +1,5 @@
 #pragma once
-
-#include "Feature.h"
+#include "../Baseline/Feature.h"
 
 struct GlowStruct {
 	BYTE base[8];

@@ -1,13 +1,16 @@
 #pragma once
-#include "dx.h"
-#include "Feature.h"
-#include "Vector.h"
+#include "../../Utils/HooksD9/dx.h"
+#include "../Baseline/Feature.h"
+#include "../../Utils/Vector.h"
+#include "../../Utils/Values/Values.h"
+#include "../../Utils/HooksD9/Drawing.h"
+#include <sstream>
+#include <string>
 
 #define STR_MERGE_IMPL(a, b) a##b
 #define STR_MERGE(a, b) STR_MERGE_IMPL(a, b)
 #define MAKE_PAD(size) STR_MERGE(_pad, __COUNTER__)[size]
 #define DEFINE_MEMBER_N(type, name, offset) struct { unsigned char MAKE_PAD(offset); type name; }
-
 
 class Ent {
 public:

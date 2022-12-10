@@ -1,7 +1,7 @@
 #pragma once
-
-#include "Feature.h"
-#include "Vector.h"
+#include <math.h>
+#include "../Baseline/Feature.h"
+#include "../../Utils/Vector.h"
 
 #define PI 3.14159265358
 

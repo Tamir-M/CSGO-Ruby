@@ -1,11 +1,12 @@
-#include "BHop.h"
-#include "AntiFlash.h"
-#include "Radar.h"
-#include "Glow.h"
-#include "RCS.h"
-#include "Aimbot.h"
-#include "ESP.h"
-#include "RecoilCrosshair.h"
+#pragma once
+#include "./BHop/BHop.h"
+#include "./AntiFlash/AntiFlash.h"
+#include "./Radar/Radar.h"
+#include "./Glow/Glow.h"
+#include "./RCS/RCS.h"
+#include "./Aimbot/Aimbot.h"
+#include "./ESP/ESP.h"
+#include "./RecoilCrosshair/RecoilCrosshair.h"
 
 extern BHop BunnyHop;
 extern AntiFlash FlashHack;

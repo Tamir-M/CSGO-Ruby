@@ -1,7 +1,7 @@
 #pragma once
-#include "Feature.h"
-#include "Vector.h"
-#include "Drawing.h"
+#include "../Baseline/Feature.h"
+#include "../../Utils/Vector.h"
+#include "../../Utils/HooksD9/Drawing.h"
 
 class RecoilCrosshair: public Feature {
 public:

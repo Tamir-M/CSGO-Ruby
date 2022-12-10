@@ -1,7 +1,4 @@
 #include "ESP.h"
-#include "Drawing.h"
-#include <sstream>
-#include <string>
 
 ESP::~ESP() {
 	this->Font->Release();

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Feature.h"
+#include "../Baseline/Feature.h"
 
-class Radar : public Feature
+
+class AntiFlash : public Feature
 {
 public:
 	using Feature::Feature;

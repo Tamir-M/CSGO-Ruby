@@ -1,5 +1,4 @@
 #include "Aimbot.h"
-#include <math.h>
 
 float getDistance(uintptr_t* player, uintptr_t* entity) {
 	Vec3* playerPos = (Vec3*)(*(uintptr_t*)player + m_vecOrigin);

@@ -1,6 +1,6 @@
 #pragma once
 #include "dx.h"
-#include "Vector.h"
+#include "../Vector.h"
 
 #define ABS(x) ((x < 0) ? (-x) : (x))
 #define TORAD(x) ((x) * static_cast<float>(0.01745329252))
